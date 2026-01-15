@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Scheme Assistant</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styleHack.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>Government Scheme Assistant 🤖</h1>
+    <p>
+      Ye chatbot Student, Women aur Senior Citizen ke liye available government schemes aur apply process bataega.
+    </p>
+  </header>
+
+  <main>
+    <div class="chatbot-wrapper">
+      <df-messenger
+        intent="WELCOME"
+        chat-title="GovSchemeBot"
+        agent-id="3f56a048-fc9b-48a2-92d6-2ce2566fbc92"
+        language-code="en"
+      ></df-messenger>
+    </div>
+
+    <div class="quick-buttons">
+      <button onclick="sendQuickMessage('Student Schemes')">Student Schemes</button>
+      <button onclick="sendQuickMessage('Women Schemes')">Women Schemes</button>
+      <button onclick="sendQuickMessage('Senior Citizen Schemes')">Senior Citizen Schemes</button>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Government Scheme Chatbot
+  </footer>
+
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+  <script>
+    function sendQuickMessage(message) {
+      const dfMessenger = document.querySelector('df-messenger');
+      dfMessenger.renderCustomText(message);
+    }
+  </script>
+</body>
+</html>
